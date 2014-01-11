@@ -7,7 +7,7 @@ use constant PREFIX => 'XML::Parser::ClinicalTrials::Study';
 use XML::Rabbit::Root;
 use DateTime::Format::Natural;
 
-has_xpath_value nct                       => './id_info/nct_id';
+has_xpath_value nct_number                => './id_info/nct_id';
 has_xpath_value sponsor                   => './sponsors/lead_sponsor/agency';
 has_xpath_value condition                 => './condition';
 has_xpath_value study_design              => './study_design';
