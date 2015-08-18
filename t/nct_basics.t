@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use Test::Most;
-use File::Slurp;
+use File::Slurper 'read_text';
 
 use XML::Parser::ClinicalTrials::Study;
 
@@ -33,7 +33,7 @@ sub main {
 
 sub create_parser {
     my $file = shift;
-    my $xml  = read_file( "t/data/${file}.xml", binmode => ':utf8' );
+    my $xml  = read_text( "t/data/${file}.xml" );
 
     return XML::Parser::ClinicalTrials::Study->new( xml => $xml );
 }

@@ -142,11 +142,11 @@ XML::Parser::ClinicalTrials::Study - XML parser/representation for ClinicalTrial
 
 =head1 SYNOPSIS
 
-    use File::Slurp;
+    use File::Slurper 'read_text';
     use XML::Parser::ClinicalTrials::Study;
 
     # XML file downloaded from clinicaltrials.gov
-    my $xml   = read_file( 'NCT00003095.xml', binmode => ':utf8' );
+    my $xml   = read_text( 'NCT00003095.xml' );
     my $study = XML::Parser::ClinicalTrials::Study->new( xml => $xml );
 
 
